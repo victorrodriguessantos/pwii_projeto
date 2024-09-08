@@ -1,0 +1,82 @@
+body {
+    background-color: #111827;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 20px;
+    font-size: 20px;
+}
+
+nav li {
+    display: flex;
+    background-color: #4F46E5;
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    color: #F9FAFB;
+}
+nav a {
+    text-decoration: none;
+}
+
+nav li:hover {
+    background-color: rgb(108, 108, 248);
+}
+
+h1 {
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    color: #F9FAFB;
+}
+
+/* Botão de Voltar */
+
+button {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(73, 73, 247);
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+button:hover {
+    background-color: rgb(108, 108, 248);
+}
+
+/* Tabela */
+
+.table-container {
+    position: relative;
+    width: 50%;
+    height: 100vh;
+    margin: 0 auto;
+    overflow: hidden;
+    overflow-y: auto;
+}
+table {
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    background-color: #4F46E5;
+}
+th, td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #ee0f0f;
+}
+tr:nth-child(odd) {
+    background-color: #F9FAFB;
+}

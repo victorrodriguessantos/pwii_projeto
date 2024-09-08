@@ -21,24 +21,24 @@
 </div>
 
 <div class="titulo">
-    <h1>Lista de Produtos</h1>
+    <h1>Lista de Fornecedores</h1>
 </div>
 
 <div class="table-container">
     <table>
         <tr>
             <th>ID</th>
-            <th>PRODUTO</th>
-            <th>QUANTIDADE</th>
-            <th>VALOR</th>
+            <th>FORNECEDOR</th>
+            <th>CNPJ</th>
+
         </tr>
 
-        @foreach ($produto as $tbproduto)
+        @foreach ($fornecedor as $tbfornecedor)
         <tr>
-            <td> {{ $tbproduto -> id_produto }} </td>
-            <td> {{ $tbproduto -> name_produto }} </td>
-            <td> {{ $tbproduto -> quantidade }} </td>
-            <td> {{ $tbproduto -> valor }}
+            <td> {{ $tbfornecedor -> id_fornecedor }} </td>
+            <td> {{ $tbfornecedor -> name_fornecedor }} </td>
+            <td> {{ $tbfornecedor -> cnpj }} </td>
+
         </tr>
 
         @endforeach

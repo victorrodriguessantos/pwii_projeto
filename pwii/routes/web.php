@@ -2,6 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\FornecedorController;
+
+
 
 
 /*
@@ -21,3 +25,5 @@ Route::get('/', function () {
 
 Route::get('/produto', 'App\http\Controllers\ProdutoController@index');
 Route::get('/listarprodutos', 'App\http\Controllers\ProdutoController@index');
+Route::get('/listarcategoria', 'App\http\Controllers\CategoriaController@index');
+Route::get('/listarfornecedor', 'App\http\Controllers\FornecedorController@index');
