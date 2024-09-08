@@ -1,0 +1,49 @@
+body {
+    display: flex;
+    font-family: 'Nunito', sans-serif;
+    background-color: #111827;
+}
+
+.text-home {
+    width: 30%;
+    color: aliceblue;
+    margin-top: 150px;
+    margin-left: 200px;
+}
+h1 {
+    font-size: 60px;
+}
+span {
+    color: #ff6400;
+}
+
+button {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(73, 73, 247);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 70px;
+}
+button:hover {
+    background-color: rgb(108, 108, 248);
+}
+
+.img-back {
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    right: 350px;
+    top: 180px;
+
+}
+
+footer {
+
+    margin-top: 850px;
+    color: aliceblue;
+    text-align: center;
+    align-items: center;
+    
+}
