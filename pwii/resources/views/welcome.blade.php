@@ -12,10 +12,10 @@
     <body>
         <div class="text-home">
         <h1>Programação Web II</h1>
-        <h2>Projeto feito em aula, juntamente com o professor Alan, utilizando o <span>Lavarel</span> e <span>Banco de Dados</span></h2>
+        <h2>Projeto feito em aula, juntamente com o professor Alan, utilizando o <span>Laravel</span> e <span>Banco de Dados</span></h2>
         <hr>
         <p>Objetivo do projeto é consumir os dados inseridos no Banco de Dados, utilize o botão abaixo para nevegar pelos itens
-           cadastrador no banco.
+           cadastrados no banco.
         </p>
         <button onclick="window.location='{{ url('listarprodutos') }}'">Acessar itens</button>
         </div>
