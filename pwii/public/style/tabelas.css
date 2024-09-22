@@ -42,6 +42,24 @@ h1 {
     color: #F9FAFB;
 }
 
+/* Botão de adicionar item */
+.btn-adc {
+    display: flex;
+    justify-content: end;
+}
+.btn-adc button {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(124, 124, 248);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-top: 70px;
+}
+.btn-adc button:hover {
+    background-color: rgb(108, 108, 248);
+}
+
 /* Tabela */
 
 .table-container {

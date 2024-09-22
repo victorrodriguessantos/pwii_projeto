@@ -25,7 +25,7 @@
         </div>
 
         <footer>
-            <p>Pagina desenvolvida por Victor Rodrigues</p>
+            <p>Pagina desenvolvida por Victor Rodrigues e Luana Valadares</p>
             <hr>
         </footer>
 
