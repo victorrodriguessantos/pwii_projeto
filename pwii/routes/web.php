@@ -28,3 +28,5 @@ Route::get('/listarprodutos', 'App\http\Controllers\ProdutoController@index');
 Route::get('/listarcategoria', 'App\http\Controllers\CategoriaController@index');
 Route::get('/listarfornecedor', 'App\http\Controllers\FornecedorController@index');
 Route::get('/listarcontato', 'App\http\Controllers\ContatoController@index');
+
+Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');

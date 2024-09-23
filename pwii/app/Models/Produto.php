@@ -10,4 +10,11 @@ class Produto extends Model {
     use HasFactory;
 
     protected $table = 'tbprodutos';
+
+
+// Model para aceitar inserções em massa no banco
+    protected $fillable = ['name_produto', 'quantidade', 'valor', 'id_categoria'];
+
+    public $timestamps = false; // Isso desativa o uso de created_at e updated_at
+
 }

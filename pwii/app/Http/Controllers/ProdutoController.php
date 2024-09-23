@@ -13,16 +13,28 @@ class ProdutoController extends Controller {
 
         return view('listarprodutos', ['produto' => $produto]);
 
-
-/*        foreach($produto as $p) {
-
-
-            echo "<p>$p->id_produto";
-            echo "<h1>$p->name_produto";
-
-
-        }
-*/
     }
 
+// CONECTANDO COM O BANCO PARA ADICIONAR INFORMAÇÕES
+public function store()
+{
+    // Acessando os dados diretamente do $_POST
+    $txtNome = $_POST['txtNome'];
+    $txtQtd = $_POST['txtQtd'];
+    $txtValor = $_POST['txtValor'];
+    $txtCat = $_POST['txtCat'];
+
+
+
+    // Inserindo os dados no banco
+    Produto::create([
+        'name_produto' => $txtNome,
+        'quantidade' => $txtQtd,
+        'valor' => $txtValor,
+        'id_categoria' => $txtCat
+
+    ]);
+
+    return redirect()->back()->with('success', 'Produto cadastrado com sucesso!');
+}
 }
