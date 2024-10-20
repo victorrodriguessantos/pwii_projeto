@@ -29,4 +29,7 @@ Route::get('/listarcategoria', 'App\http\Controllers\CategoriaController@index')
 Route::get('/listarfornecedor', 'App\http\Controllers\FornecedorController@index');
 Route::get('/listarcontato', 'App\http\Controllers\ContatoController@index');
 
-Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');
+Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('produtos.create');
+Route::post('/produtos/store', [ProdutoController::class, 'store'])->name('produtos.store');
+
+Route::post('/categoria/store', [CategoriaController::class, 'store'])->name('categoria.store');

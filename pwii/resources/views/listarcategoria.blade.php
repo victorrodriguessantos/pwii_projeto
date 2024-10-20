@@ -20,6 +20,24 @@
     </nav>
 </div>
 
+<div class="btn-adc">
+    <button id="abrir">Adicionar item</button>
+
+    <dialog>
+        <h2>Formulario</h2>
+
+        <form action="{{ route('categoria.store') }}" method="POST">
+            @csrf <!-- Adicione o token CSRF para segurança -->
+            <label>Nome</label>
+            <input name="name_categoria" type="text" placeholder="Nome da Categoria" required>
+
+            <input type="submit" value="Cadastrar">
+        </form>
+
+        <button id="fechar">Fechar</button>
+    </dialog>
+</div>
+
 <div class="titulo">
     <h1>Categorias</h1>
 </div>
@@ -42,6 +60,8 @@
     </table>
 
 </div>
+
+<script src="{{ asset('script/index.js') }}"></script>
 
 </body>
 </html>

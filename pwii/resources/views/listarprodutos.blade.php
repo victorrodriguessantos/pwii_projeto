@@ -35,13 +35,19 @@
             <input name="txtQtd" type="number" placeholder="Quantidade do produto" required>
 
             <label>Valor</label>
-            <input name="txtValor" type="number" placeholder="Valor do produto" required>
+            <input name="txtValor" type="number" step="0.01" placeholder="Valor do produto" required>
 
             <label>Categoria</label>
-            <input name="txtCat" type="number" placeholder="Categoria do produto" required>
+                <select name="txtCat" required>
+                    <option value="">Selecione uma Categoria</option>
+                        @foreach($categoria as $tbcategoria)
+                    <option value="{{ $tbcategoria->id_categoria }}">{{ $tbcategoria->name_categoria }}</option>
+                        @endforeach
+                </select>
 
             <input type="submit" value="Cadastrar">
         </form>
+
 
         <button id="fechar">Fechar</button>
     </dialog>
@@ -59,6 +65,8 @@
             <th>PRODUTO</th>
             <th>QUANTIDADE</th>
             <th>VALOR</th>
+            <th>CATEGORIA</th>
+
         </tr>
 
         @foreach ($produto as $tbproduto)
@@ -67,6 +75,8 @@
             <td> {{ $tbproduto -> name_produto }} </td>
             <td> {{ $tbproduto -> quantidade }} </td>
             <td> R$ {{ $tbproduto ->  valor }} </td>
+            <td>{{ $tbproduto->categoria->name_categoria ?? 'Categoria não encontrada' }}</td>
+
         </tr>
 
         @endforeach
