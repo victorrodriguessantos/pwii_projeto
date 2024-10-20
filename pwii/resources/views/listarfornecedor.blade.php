@@ -15,6 +15,7 @@
         <a href="/"><li>Home</li></a>
         <a href="/listarprodutos"><li>Produtos</li></a>
         <a href="/listarcategoria"><li>Categoria</li></a>
+        <a href="/listarcontato"><li>Contato</li></a>
         <a href="/listarfornecedor"><li>Fornecedor</li></a>
         </ul>
     </nav>

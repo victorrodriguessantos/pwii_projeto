@@ -15,16 +15,19 @@
         <a href="/"><li>Home</li></a>
         <a href="/listarprodutos"><li>Produtos</li></a>
         <a href="/listarcategoria"><li>Categoria</li></a>
+        <a href="/listarcontato"><li>Contato</li></a>
         <a href="/listarfornecedor"><li>Fornecedor</li></a>
         </ul>
     </nav>
 </div>
 
 <!-- Inicio Filtro -->
+<div class="search">
 <form action="{{ route('categoria.index') }}" method="GET">
-    <input type="text" name="search" placeholder="Pesquisar Categoria">
-    <input type="submit" value="Pesquisar">
+    <input class="box-search"type="text" name="search" placeholder="Pesquisar Categoria">
+    <input class="btn-search"type="submit" value="Pesquisar">
 </form>
+</div>
 <!-- Fim Filtro -->
 
 <!-- Inicio Formulario -->

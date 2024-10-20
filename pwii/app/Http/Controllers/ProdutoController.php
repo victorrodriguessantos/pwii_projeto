@@ -13,14 +13,22 @@ class ProdutoController extends Controller {
     
     public function index(Request $request) {
         $search = $request->input('search');
+        
+        $query = Produto::query();
+    
         if ($search) {
-            $produto = Produto::where('name_produto', 'LIKE', "%{$search}%")->with('categoria')->get();
-        } else {
-            $produto = Produto::with('categoria')->get();
+            $query->whereHas('categoria', function($q) use ($search) {
+                $q->where('name_categoria', 'LIKE', "%{$search}%");
+            });
+            $query->orWhere('name_produto', 'LIKE', "%{$search}%");
         }
+    
+        $produto = $query->with('categoria')->get();
         $categoria = Categoria::all();
+    
         return view('listarprodutos', ['produto' => $produto, 'categoria' => $categoria]);
     }
+    
     
 
 // CONECTANDO COM O BANCO PARA ADICIONAR INFORMAÇÕES

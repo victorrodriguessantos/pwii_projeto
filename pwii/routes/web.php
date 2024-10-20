@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
+use App\Http\Controllers\ContatoController;
+
 
 
 
@@ -36,4 +38,7 @@ Route::get('/listarprodutos', [ProdutoController::class, 'index'])->name('produt
 
 Route::post('/categoria/store', [CategoriaController::class, 'store'])->name('categoria.store');
 Route::get('/listarcategoria', [CategoriaController::class, 'index'])->name('categoria.index');
+
+Route::post('/contato/store', [ContatoController::class, 'store'])->name('contato.store');
+Route::get('/listarcontato', [ContatoController::class, 'index'])->name('contato.index');
 

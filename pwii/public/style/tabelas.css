@@ -3,12 +3,37 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
+/* Pesquisa - FILTRO */
+
+.search{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.box-search {
+    width: 300px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+
+}
+
+.btn-search {
+
+    height: 42px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(124, 124, 248);
+    color: white;
+}
+
 /* Navegação */
 
 nav {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 30px;
+    justify-content: center;
+    margin: 0 auto;
 }
 nav ul {
     display: flex;
@@ -54,7 +79,7 @@ h1 {
     color: white;
     border: none;
     border-radius: 10px;
-    margin-top: 70px;
+    margin-top: 40px;
 }
 .btn-adc button:hover {
     background-color: rgb(108, 108, 248);
@@ -65,7 +90,7 @@ h1 {
 .table-container {
     position: relative;
     width: 50%;
-    height: 700px;
+    height: 600px;
     margin: 0 auto;
     overflow: hidden;
     overflow-y: auto;
