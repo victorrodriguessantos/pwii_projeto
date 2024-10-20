@@ -20,6 +20,14 @@
     </nav>
 </div>
 
+<!-- Inicio Filtro -->
+<form action="{{ route('categoria.index') }}" method="GET">
+    <input type="text" name="search" placeholder="Pesquisar Categoria">
+    <input type="submit" value="Pesquisar">
+</form>
+<!-- Fim Filtro -->
+
+<!-- Inicio Formulario -->
 <div class="btn-adc">
     <button id="abrir">Adicionar item</button>
 
@@ -37,6 +45,7 @@
         <button id="fechar">Fechar</button>
     </dialog>
 </div>
+<!-- Fim Formulario -->
 
 <div class="titulo">
     <h1>Categorias</h1>

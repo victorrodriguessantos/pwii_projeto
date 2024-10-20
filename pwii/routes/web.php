@@ -31,5 +31,9 @@ Route::get('/listarcontato', 'App\http\Controllers\ContatoController@index');
 
 Route::get('/produtos/create', [ProdutoController::class, 'create'])->name('produtos.create');
 Route::post('/produtos/store', [ProdutoController::class, 'store'])->name('produtos.store');
+Route::get('/listarprodutos', [ProdutoController::class, 'index'])->name('produtos.index');
+
 
 Route::post('/categoria/store', [CategoriaController::class, 'store'])->name('categoria.store');
+Route::get('/listarcategoria', [CategoriaController::class, 'index'])->name('categoria.index');
+

@@ -11,14 +11,26 @@ use Illuminate\Http\Request;
 class ProdutoController extends Controller {
     
     
-    public function index() {
-        // Usando 'with' para carregar a categoria associada a cada produto
-        $produto = Produto::with('categoria')->get();
-
+    public function index(Request $request) {
+        $search = $request->input('search');
+        if ($search) {
+            $produto = Produto::where('name_produto', 'LIKE', "%{$search}%")->with('categoria')->get();
+        } else {
+            $produto = Produto::with('categoria')->get();
+        }
         $categoria = Categoria::all();
-        return view('listarprodutos', ['produto' => $produto, 'categoria' => $categoria]);    }
+        return view('listarprodutos', ['produto' => $produto, 'categoria' => $categoria]);
+    }
+    
 
 // CONECTANDO COM O BANCO PARA ADICIONAR INFORMAÇÕES
+
+
+// TESTE
+
+// TESTE
+
+
 
 public function store()
 {

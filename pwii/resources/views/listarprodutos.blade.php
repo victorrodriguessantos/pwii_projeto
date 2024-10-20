@@ -20,6 +20,13 @@
     </nav>
 </div>
 
+<!-- Inicio Filtro -->
+<form action="{{ route('produtos.index') }}" method="GET">
+    <input type="text" name="search" placeholder="Pesquisar Produto">
+    <input type="submit" value="Pesquisar">
+</form>
+<!-- Fim Filtro -->
+
 <div class="btn-adc">
     <button id="abrir">Adicionar item</button>
 

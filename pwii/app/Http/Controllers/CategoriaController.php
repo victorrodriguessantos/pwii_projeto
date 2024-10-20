@@ -9,12 +9,15 @@ use Illuminate\Http\Request;
 
 class CategoriaController extends Controller {
 
-    public function index() {
-        $categoria = Categoria::all();
-
+    public function index(Request $request) {
+        $search = $request->input('search');
+        if ($search) {
+            $categoria = Categoria::where('name_categoria', 'LIKE', "%{$search}%")->get();
+        } else {
+            $categoria = Categoria::all();
+        }
         return view('listarcategoria', ['categoria' => $categoria]);
-
-    }
+    }  
 
 // CONECTANDO COM O BANCO PARA ADICIONAR INFORMAÇÕES
 
