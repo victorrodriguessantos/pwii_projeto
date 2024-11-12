@@ -42,3 +42,6 @@ Route::get('/listarcategoria', [CategoriaController::class, 'index'])->name('cat
 Route::post('/contato/store', [ContatoController::class, 'store'])->name('contato.store');
 Route::get('/listarcontato', [ContatoController::class, 'index'])->name('contato.index');
 
+Route::get('/produtos/{id}', [ProdutoController::class, 'show'])->name('produtos.show');
+Route::get('/contatos/{id}', [ContatoController::class, 'show'])->name('contatos.show');
+

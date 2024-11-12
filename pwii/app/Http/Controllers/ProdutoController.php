@@ -28,25 +28,33 @@ class ProdutoController extends Controller {
     
         return view('listarprodutos', ['produto' => $produto, 'categoria' => $categoria]);
     }
+
+    public function show($id)
+    {
+        try {
+            $produto = Produto::with('categoria')->find($id);
     
+            if (!$produto) {
+                return response()->json(['error' => 'Produto não encontrado'], 404);
+            }
+    
+            return response()->json($produto);
+    
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Erro ao buscar o produto: ' . $e->getMessage()], 500);
+        }
+    }
     
 
 // CONECTANDO COM O BANCO PARA ADICIONAR INFORMAÇÕES
 
 
-// TESTE
-
-// TESTE
-
-
-
-public function store()
+public function store(Request $request)
 {
-    // Acessando os dados diretamente do $_POST
-    $txtNome = $_POST['txtNome'];
-    $txtQtd = $_POST['txtQtd'];
-    $txtValor = $_POST['txtValor'];
-    $txtCat = $_POST['txtCat'];
+    $txtNome = $request->input('txtNome');
+    $txtQtd = $request->input('txtQtd');
+    $txtValor = $request->input('txtValor');
+    $txtCat = $request->input('txtCat');
 
     // Inserindo os dados no banco
     Produto::create([
@@ -54,10 +62,10 @@ public function store()
         'quantidade' => $txtQtd,
         'valor' => $txtValor,
         'id_categoria' => $txtCat
-
     ]);
 
-    return redirect()->back()->with('success', 'Produto cadastrado com sucesso!');
+    return response()->json(['success' => 'Produto cadastrado com sucesso!']);
 }
+
 
 }

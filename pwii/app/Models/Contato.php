@@ -10,6 +10,9 @@ class Contato extends Model {
     use HasFactory;
 
     protected $table = 'tbcontato';
+
+    protected $primaryKey = 'id_contato';
+
     public $timestamps = false;
 
     protected $fillable = ['name_contato', 'telefone', 'endereco'];

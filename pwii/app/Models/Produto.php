@@ -11,6 +11,7 @@ class Produto extends Model {
     use HasFactory;
 
     protected $table = 'tbprodutos';
+    protected $primaryKey = 'id_produto';
 
 
 // Model para aceitar inserções em massa no banco
