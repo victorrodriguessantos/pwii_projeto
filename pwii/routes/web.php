@@ -5,10 +5,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\FornecedorController;
 use App\Http\Controllers\ContatoController;
-
-
-
-
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +19,7 @@ use App\Http\Controllers\ContatoController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('login');
 });
 
 Route::get('/produto', 'App\http\Controllers\ProdutoController@index');
@@ -44,4 +41,22 @@ Route::get('/listarcontato', [ContatoController::class, 'index'])->name('contato
 
 Route::get('/produtos/{id}', [ProdutoController::class, 'show'])->name('produtos.show');
 Route::get('/contatos/{id}', [ContatoController::class, 'show'])->name('contatos.show');
+
+
+
+
+// Tela de login
+Route::get('/', [LoginController::class, 'index'])->name('login.index');
+
+// Rota para cadastro de usuário
+Route::post('/login/store', [LoginController::class, 'store'])->name('login.store');
+
+// Rota para autenticação
+Route::post('/login/authenticate', [LoginController::class, 'authenticate'])->name('login.authenticate');
+
+// Produtos (após login)
+Route::get('/produtos', function () {
+    return view('produtos'); // Substitua pela view correta
+})->name('/listarprodutos');
+
 
