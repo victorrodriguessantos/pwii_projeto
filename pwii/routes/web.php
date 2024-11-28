@@ -60,3 +60,4 @@ Route::get('/produtos', function () {
 })->name('/listarprodutos');
 
 
+Route::get('/login', [LoginController::class, 'index'])->name('login.index');
