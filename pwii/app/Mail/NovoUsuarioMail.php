@@ -14,7 +14,10 @@ class NovoUsuarioMail extends Mailable
     public $senha;
 
     /**
-     * Create a new message instance.
+     * Cria uma nova instância.
+     *
+     * @param string $email
+     * @param string $senha
      */
     public function __construct($email, $senha)
     {
@@ -23,12 +26,14 @@ class NovoUsuarioMail extends Mailable
     }
 
     /**
-     * Build the message.
+     * Cria o e-mail.
+     *
+     * @return $this
      */
     public function build()
     {
         return $this->subject('Seus dados de acesso')
-                    ->view('emails.novo_usuario')
+                    ->view('novo_usuario') // Aqui é onde a view será chamada
                     ->with([
                         'email' => $this->email,
                         'senha' => $this->senha,
